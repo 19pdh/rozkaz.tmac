@@ -1,0 +1,77 @@
+#!/bin/sh
+
+(cat << EOF
+.\" Margines górny
+.nr HM 0.8i
+.\" Margines dolny
+.po 1.2i
+
+.\" Wielkość czcionki i wielkość linii
+.nr PS 12
+.nr VS 14
+
+.de DRUŻYNA
+.ft B
+.ad l
+.ps 14
+.vs 16
+ZWIĄZEK HARCERSTWA RZECZYPOSPOLITEJ
+.sp 0.1
+.ps \n(PS)
+.vs \n(VS)
+\\\\\$*
+.ft R
+.PS
+line 6
+.PE
+.sp 1
+..
+.
+.de DATA
+.ad r
+\\\\\$*
+.ad b
+..
+.
+.de ROZKAZ
+.ad c
+.sp 3
+.ps 16
+.ft B
+Rozkaz \\\\\$*
+.ft R
+.ps \n(PS)
+.ad b
+.sp 2
+..
+.
+.de CYTAT
+.sp 1
+.LP
+.ft I
+\\\\\$1
+.ft R
+.sp 0.5
+.ad r
+.ft I
+~ \\\\\$2
+.ft R
+.br
+.ad b
+.sp 1
+..
+.
+.de CZUWAJ
+.sp 1
+.ad c
+.ft B
+Czuwaj!
+.ft R
+.br
+.ad b
+.sp 1
+..
+.
+EOF
+# cat $1) | sed 's/^\([0-9]\+\.\([0-9]\.\)*\) /\.IP \1\n/' | pic | roff -ms | pdf
+cat $1 | ./indent) | pic | roff -ms | pdf

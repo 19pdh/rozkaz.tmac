@@ -1,0 +1,29 @@
+#!/bin/sh
+
+prev=1
+
+while read -r line
+do
+  # if run .CZUWAJ macro, center it
+  if echo $line | grep '^.CZUWAJ'>/dev/null; then
+    while [ $prev -gt 1 ]; do
+      echo ".RE"
+      prev=$(($prev-1))
+    done
+    echo $line
+    continue
+  fi
+
+  if echo $line | grep -P '^[0-9]+\.([0-9]+\.)* ' > /dev/null; then
+    number=`echo $line | cut -d' ' -f1`
+    rest=`echo $line | cut -d' ' -f2-`
+    num_of_dots=`echo $number | grep -o '\.' | wc -l`
+    [ $num_of_dots -gt $prev ] && echo ".RS"
+    [ $num_of_dots -lt $prev ] && echo ".RE"
+    indent=$(($num_of_dots*2))
+    echo ".IP $number $indent\n$rest"
+    prev=$num_of_dots
+  else
+    echo $line
+  fi
+done < /dev/stdin

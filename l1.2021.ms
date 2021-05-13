@@ -1,0 +1,24 @@
+.DRUŻYNA 19 Poznańska Drużyna Harcerzy “Puszcza”
+.DATA Poznań, 13 maja 2021 roku
+.ROZKAZ L. 1/2021
+.CYTAT "Czego nie potrafię stworzyć, tego nie potrafię zrozumieć." "Richard Feynman"
+
+1. Mianowania i zwolnienia
+
+1.1. Mianuje ....
+
+2. Stopnie i sprawności
+
+2.1. Zamykam z wynikiem pozytywnym próbę ....
+
+3. Inne
+
+Sprawy inne są opisane tutaj.....
+
+.CZUWAJ
+
+.ad r
+Drużynowy
+.sp 0.1
+pwd. Patryk Niedźwiedziński HO
+.br

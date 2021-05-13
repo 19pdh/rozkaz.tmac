@@ -1,5 +1,7 @@
 # rozkaz.tmac
 
+[http](https://zhr.niedzwiedzinski.cyou/rozkaz.tmac/)
+
 Neatroff macro do pisania harcerskich rozkazów = najszybsza i najskuteczniejsza metoda.
 
 ## Po co?

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>rozkaz.tmac</title>
+    <style>
+@media (prefers-color-scheme: dark) {
+  html {
+    background: #111;
+    color: #fff;
+  }
+  a:link { color: #ee9; }
+  a:visited { color: #bbf; }
+}
+body {
+  max-width: 40em;
+  padding: 1em;
+  margin: 0 auto;
+}
+</style>
+  </head>
+  <body>
+    <h1>rozkaz.tmac</h1>
+    <p>Makra neatroff do pisania harcerskich rozkazów</p>
+    <p>Masz sugestie? Prześlij na patryk.niedzwiedzinski[@]zhr.pl lub na
+    <a href="https://github.com/19pdh/rozkaz.tmac">GitHubie</a>.</p>
+    <h2>Używanie</h2>
+    <p>Pobierz <a href="https://git.niedzwiedzinski.cyou/zhr/rozkaz.tmac/plain/rozkaz">rozkaz</a> - skrypt do renderowania rozkazów (nazwa mówi swoje :P)</p>
+    <code><pre>
+      $ ./rozkaz plik_rozkazu.ms
+    </pre></code>
+    <p>Rozszerzenie <code>.ms</code> oznacza plik neatroff/groff/troff, który używa makr <code>ms</code> - taka ciekawostka, może kogoś będzie interesować.</p>
+    <h2>Składnia</h2>
+    <p>W skrócie, każda linia jest traktowana jako polecenie dla neatroff'a. Jeżeli linia zaczyna się od kropki, to sygnał dla neatroff'a, że ma uruchomić makro. W przeciwnym wypadku po prostu traktuje to jako tekst. Akapity muszą być oddzielone pustą linią (nie dotyczy to makr). Jeżeli nie będzie pustej linii to będzie to traktowane jako kontynuowanie poprzedniego akapitu - enter zostanie zignorowany.</p>
+    <p>Dostępne jest 5 makr: DRUŻYNA, DATA, ROZKAZ, CYTAT, CZUWAJ</p>
+    <p>Zobacz przykład użycia: <a href="https://zhr.niedzwiedzinski.cyou/rozkaz.tmac/l1.2021.ms">plik źródłowy</a> <a href="https://zhr.niedzwiedzinski.cyou/rozkaz.tmac/l1.2021.pdf">PDF</a></p>
+  </body>
+</html>

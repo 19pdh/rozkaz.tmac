@@ -1,5 +1,7 @@
 #!/bin/sh
 
+zhrlogo=/home/pn/zhr/rozkaz.tmac/zhr.eps
+
 indent() {
   prev=1
 
@@ -32,7 +34,7 @@ indent() {
 
 (cat << EOF
 .\" Margines górny
-.nr HM 0.8i
+.nr HM 0.2i
 .\" Margines dolny
 .po 1.2i
 
@@ -41,6 +43,9 @@ indent() {
 .nr VS 14
 
 .de DRUŻYNA
+.EPS $zhrlogo R 800 800
+.sp -4
+.br
 .ft B
 .ad l
 .ps 14
@@ -50,6 +55,7 @@ ZWIĄZEK HARCERSTWA RZECZYPOSPOLITEJ
 .ps \n(PS)
 .vs \n(VS)
 \\\\\$*
+.sp 1
 .ft R
 .PS
 line 6
@@ -104,4 +110,4 @@ Czuwaj!
 .
 EOF
 # cat $1) | sed 's/^\([0-9]\+\.\([0-9]\.\)*\) /\.IP \1\n/' | pic | roff -ms | pdf
-cat $1 | indent) | pic | roff -ms | pdf
+cat $1 | indent) | pic | roff -ms -meps | post | ps2pdf - -

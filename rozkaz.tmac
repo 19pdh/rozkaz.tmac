@@ -1,15 +1,28 @@
 .\" Margines górny
-.nr HM 0.2i
+.nr HM 0.5i
 .\" Margines dolny
+.nr FM 1.5i
+.\" Margines lewy
 .po 1.2i
 
 .\" Wielkość czcionki i wielkość linii
 .nr PS 12
 .nr VS 14
+.fp - R NimbusRoman-Regular
+.fp - B NimbusRoman-Bold
+.fp - I NimbusRoman-Italic
+
+.ds CH
+.ds CF \v'-0.3i'\l'6.05i'
+.ds RF \v'1'Strona %
 
 .de DRUŻYNA
-.EPS zhr.eps R 800 800
+.ds LH \\$*
+.ds CH \v'0.3'\l'6.05i'
+.EPS INSTALLDIR/zhr.eps R 800 800
 .sp -4
+.br
+.ll 5i
 .ft B
 .ad l
 .ps 14
@@ -19,17 +32,19 @@ ZWIĄZEK HARCERSTWA RZECZYPOSPOLITEJ
 .ps \n(PS)
 .vs \n(VS)
 \\$*
-.sp 1
 .ft R
-.PS
-line 6
-.PE
-.sp 1
+.sp -0.8
+\l'5i'
+.sp 1.2
+.br
+.ll 6i
+.nr HM 1.2i
 ..
 .
 .de DATA
 .ad r
 \\$*
+.br
 .ad b
 ..
 .
@@ -41,6 +56,7 @@ line 6
 Rozkaz \\$*
 .ft R
 .ps \n(PS)
+.br
 .ad b
 .sp 2
 ..

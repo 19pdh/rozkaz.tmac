@@ -8,6 +8,8 @@ Neatroff macro do pisania harcerskich rozkazów = najszybsza i najskuteczniejsza
 
 Bo neatroff jest szybki i lekki. Poniższy przykład wyrenderował się na 10-letnim kompie w 230 **milisekund** - to jest całkiem szybko. Neatroff waży 16M, co nie da się w ogóle porównać z 1GB, które zajmuje LaTeX.
 
+UPDATE: teraz jest logo lilijki, co jest trochę problematyczne i trudniejsze, dlatego teraz zajmuje ~800 milisekund. :(
+
 ## Makra
 
 - .DRUŻYNA - nagłówek
@@ -52,8 +54,8 @@ pwd. Patryk Niedźwiedziński HO
 
 Musisz zainstalować neatroff.
 
-Gdy już masz zainstalowanego neatroff'a, to wystarczy, że pobierzesz skrypt `rozkaz`
+Gdy już masz zainstalowanego neatroff'a, to pobierz to repo, aby `rozkaz` był w `$PATH`
 
 ```
-./rozkaz l1.2021.ms > l1.2021.pdf
+rozkaz l1.2021.ms > l1.2021.pdf
 ```

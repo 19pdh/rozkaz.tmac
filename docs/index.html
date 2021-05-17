@@ -27,14 +27,30 @@ body {
     <a href="https://github.com/19pdh/rozkaz.tmac">GitHubie</a>.</p>
     <a href="https://www.youtube.com/watch?v=D2jAwlorN30">Rozkaz rozkaz</a>
     <h2>Używanie</h2>
-    <p>Pobierz <a href="https://git.niedzwiedzinski.cyou/zhr/rozkaz.tmac/plain/rozkaz">rozkaz</a> - skrypt do renderowania rozkazów (nazwa mówi swoje :P)</p>
+    <p>Pobierz <a href="https://git.niedzwiedzinski.cyou/cgit/zhr/rozkaz.tmac/snapshot/rozkaz.tmac-master.tar.gz">rozkaz</a> i wypakuj gdzieś. Podlinkuj skrypt <code>rozkaz</code> aby był w <code>$PATH.</code></p>
     <code><pre>
-      $ ./rozkaz plik_rozkazu.ms
+      $ ln -s $PWD/rozkaz /usr/bin/rozkaz
     </pre></code>
-    <p>Rozszerzenie <code>.ms</code> oznacza plik neatroff/groff/troff, który używa makr <code>ms</code> - taka ciekawostka, może kogoś będzie interesować.</p>
+    <p>Teraz możesz zrobić:</p>
+    <code><pre>
+      $ rozkaz plik_rozkazu.rozkaz > plik.pdf
+    </pre></code>
     <h2>Składnia</h2>
     <p>W skrócie, każda linia jest traktowana jako polecenie dla neatroff'a. Jeżeli linia zaczyna się od kropki, to sygnał dla neatroff'a, że ma uruchomić makro. W przeciwnym wypadku po prostu traktuje to jako tekst. Akapity muszą być oddzielone pustą linią (nie dotyczy to makr). Jeżeli nie będzie pustej linii to będzie to traktowane jako kontynuowanie poprzedniego akapitu - enter zostanie zignorowany.</p>
     <p>Dostępne jest 5 makr: DRUŻYNA, DATA, ROZKAZ, CYTAT, CZUWAJ</p>
     <p>Zobacz przykład użycia: <a href="https://zhr.niedzwiedzinski.cyou/rozkaz.tmac/l1.2021.ms">plik źródłowy</a> <a href="https://zhr.niedzwiedzinski.cyou/rozkaz.tmac/l1.2021.pdf">PDF</a></p>
+    <h2>Ciekawostka</h2>
+    <p>Plik pdf to w większości lilijka</p>
+    <pre>
+    [pn@x220 ~/zhr/rozkaz.tmac]$ du -h *
+      60K     doc1.png
+      12K     docs
+      876K    l1.2021.pdf
+      4.0K    l1.2021.rozkaz
+      4.0K    README.md
+      4.0K    rozkaz
+      4.0K    rozkaz.tmac
+      868K    zhr.eps
+    </pre>
   </body>
 </html>

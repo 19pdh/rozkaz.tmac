@@ -54,7 +54,14 @@ pwd. Patryk Niedźwiedziński HO
 
 Musisz zainstalować neatroff.
 
-Gdy już masz zainstalowanego neatroff'a, to pobierz to repo, aby `rozkaz` był w `$PATH`
+Gdy już masz zainstalowanego neatroff'a, to pobierz to repo, aby `rozkaz` był w `$PATH`:
+
+```
+sudo mkdir /opt/share/rozkaz.tmac
+sudo cp zhr.eps rozkaz rozkaz.tmac /opt/share/rozkaz.tmac
+cd /opt/share/rozkaz.tmac
+sudo ln -s $PWD/rozkaz /usr/bin/rozkaz
+```
 
 ```
 rozkaz l1.2021.ms > l1.2021.pdf

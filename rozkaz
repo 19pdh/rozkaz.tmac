@@ -1,5 +1,6 @@
 #!/bin/sh
 
+PATH="/opt/share/neatroff/bin:$PATH"
 installdir=$(dirname $(readlink -f $0))
 
 indent() {
@@ -24,7 +25,7 @@ indent() {
       [ $num_of_dots -gt $prev ] && echo ".RS"
       [ $num_of_dots -lt $prev ] && echo ".RE"
       indent=$(($num_of_dots*2))
-      echo ".IP $number $indent\n$rest"
+      printf ".IP $number $indent\n$rest\n"
       prev=$num_of_dots
     else
       echo $line

@@ -52,7 +52,7 @@ pwd. Patryk Niedźwiedziński HO
 
 ## Instalacja i używanie
 
-Musisz zainstalować neatroff.
+Musisz zainstalować [neatroff](https://github.com/pniedzwiedzinski/neatroff_install).
 
 Gdy już masz zainstalowanego neatroff'a, to pobierz to repo, aby `rozkaz` był w `$PATH`:
 

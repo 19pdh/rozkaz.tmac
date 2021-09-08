@@ -57,10 +57,9 @@ Musisz zainstalować [neatroff](https://github.com/pniedzwiedzinski/neatroff_ins
 Gdy już masz zainstalowanego neatroff'a, to pobierz to repo, aby `rozkaz` był w `$PATH`:
 
 ```
-sudo mkdir /opt/share/rozkaz.tmac
-sudo cp zhr.eps rozkaz rozkaz.tmac /opt/share/rozkaz.tmac
-cd /opt/share/rozkaz.tmac
-sudo ln -s $PWD/rozkaz /usr/bin/rozkaz
+sudo cp zhr.pdf /opt/share/neatroff
+sudo cp rozkaz.tmac /opt/share/neatroff/tmac
+sudo cp rozkaz /usr/bin/rozkaz
 ```
 
 ```

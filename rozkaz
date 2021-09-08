@@ -1,8 +1,5 @@
 #!/bin/sh
 
-PATH="/opt/share/neatroff/bin:$PATH"
-installdir=$(dirname $(readlink -f $0))
-
 indent() {
   prev=1
 
@@ -33,6 +30,4 @@ indent() {
   done < /dev/stdin
 }
 
-(cat $installdir/rozkaz.tmac
-# cat $1) | sed 's/^\([0-9]\+\.\([0-9]\.\)*\) /\.IP \1\n/' | pic | roff -ms | pdf
-cat $1 | indent) | sed "s:INSTALLDIR:$installdir:g" | roff -ms -meps | post | ps2pdf - -
+cat $1 | indent | neatroff -mrozkaz | neatpost | ps2pdf - -

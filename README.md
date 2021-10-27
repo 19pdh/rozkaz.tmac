@@ -52,9 +52,15 @@ pwd. Patryk Niedźwiedziński HO
 
 ## Instalacja i używanie
 
-Musisz zainstalować neatroff.
+Musisz zainstalować [neatroff](https://github.com/pniedzwiedzinski/neatroff_install).
 
-Gdy już masz zainstalowanego neatroff'a, to pobierz to repo, aby `rozkaz` był w `$PATH`
+Gdy już masz zainstalowanego neatroff'a, to pobierz to repo, aby `rozkaz` był w `$PATH`:
+
+```
+sudo cp zhr.pdf /opt/share/neatroff
+sudo cp rozkaz.tmac /opt/share/neatroff/tmac
+sudo cp rozkaz /usr/bin/rozkaz
+```
 
 ```
 rozkaz l1.2021.ms > l1.2021.pdf

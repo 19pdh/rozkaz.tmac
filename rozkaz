@@ -1,7 +1,5 @@
 #!/bin/sh
 
-installdir=$(dirname $(readlink -f $0))
-
 indent() {
   prev=1
 
@@ -24,7 +22,7 @@ indent() {
       [ $num_of_dots -gt $prev ] && echo ".RS"
       [ $num_of_dots -lt $prev ] && echo ".RE"
       indent=$(($num_of_dots*2))
-      echo ".IP $number $indent\n$rest"
+      printf ".IP $number $indent\n$rest\n"
       prev=$num_of_dots
     else
       echo $line
@@ -32,6 +30,4 @@ indent() {
   done < /dev/stdin
 }
 
-(cat $installdir/rozkaz.tmac
-# cat $1) | sed 's/^\([0-9]\+\.\([0-9]\.\)*\) /\.IP \1\n/' | pic | roff -ms | pdf
-cat $1 | indent) | sed "s:INSTALLDIR:$installdir:g" | tbl | roff -ms -meps | post | ps2pdf - -
+cat $1 | indent | tbl | neatroff -mrozkaz | neatpost | ps2pdf - -
